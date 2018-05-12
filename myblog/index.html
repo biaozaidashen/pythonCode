@@ -1,0 +1,104 @@
+<!DOCTYPE html> <!--文档类型声明-->
+<html>
+	<head>
+		<!--元数据（字符集、关键字、描述信息、响应式布局、标题）信息-->
+		<meta charset="utf-8" />
+		<title>熊彪首页</title>
+		<!--一般在网站首页用内部样式表，而其它页面一般用外部样式表-->
+		<!--外部样式表的内容跟显示分离：可以很容易的实现换皮肤换版式等操作-->
+		<style>
+			/*标签选择器-对所有h2的标签生效*/
+			h2{
+				color:red;font:bold italic 33px Arial,'幼圆';
+				/*font-family:Arial,'幼圆';
+				font-size: 33px;
+				font-weight: bold; /*加粗*/
+				font-style: italic;  /*斜体字*/*/
+				/*text-align: center; 居中*/
+			}
+			/*id选择器-只对id为login的元素生效*/
+			#login{
+				width: 300px;
+				height: 200px;
+				border:1px solid/*dashed-虚线,dotted-点线*/ black;
+				border-radius: 6px 6px 6px 6px; /*边角扁平化*/
+			}
+			/*width和height是对块级元素生效*/
+			/*类选择器-所有将class属性指定为foo的元素生效*/
+			.foo{
+				/*通过将display属性设置为inline-block可以让行级元素像块级元素一样，可以设置宽高*/
+				display: inline-block;
+				width: 75px;
+				text-align: right;
+				margin-right:20px ;/*右边距*/
+			}
+			/*后代选择器*/
+			#login p{
+				margin: 10px 0 ;
+			}
+			.center{
+				text-align: center;
+			}
+			.center>input{
+				display: inline-block;
+				width: 60px;
+				height: 30px;
+				color: white;
+				background-color: red;
+				font:bold 16px '幼圆';
+				margin: 0 10px;
+				border: none;
+				cursor: pointer;
+			}
+			/*就近原则、具体性原则、重要性原则*/
+			.last{
+				margin-top:30px !important;
+				margin-right: 20px !important;
+				text-align: right;
+			}
+			a {
+				text-decoration: none;/*去掉下划线*/
+				color: rgba(0,0,255,0.5);
+			}
+			/*a:active{
+				color:orange;
+			}*/
+			/*伪类*/
+			a:hover{
+				color: orange;
+			}
+			/*并列选择器*/
+			#login input[type="text"],#login input[type="password"]{
+				border: none;
+				border-bottom: 1px solid black;
+				outline: none;/*outline（轮廓）是绘制于元素周围的一
+				条线，位于边框边缘的外围，可起到突出元素的作用，这里把它设置为none就没有边框线了*/
+			}
+			 
+		</style>
+	</head>
+	<body>
+		<!--行内样式表/内联样式表-->
+		<h2 style="background-color: yellow;">vip用户登录</h2>
+		<hr>
+		<form id="login" action="" method="post" >
+			<p>
+				<label class="foo">用户名:</label>
+				<input type="text" name="uid" required>
+			</p>
+			<p>
+				<label class="foo">密码:</label>
+				<input type="password" name="pwd" required>
+			</p>
+			<p class="center">
+				<input type="submit" value="登录">
+				<input type="reset" value="重写">
+			</p>
+			<p class="last">
+				<a href="">新用户注册</a>
+			</p>
+		</form>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>二级菜单</title>
+		<style>
+			/*这一步是去掉默认边框*/
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*
+			a{
+				text-decoration: none;
+			}
+			li{
+				list-style: none;
+			}
+			body{
+				font-size: 12px;
+				font-family: arial; 
+				
+			}
+			#box{
+				width: 980px;
+				height: 1400px;
+				margin:0 auto;<!--auto--左右居中-->
+				background-color: #888;
+			}
+			#box>ul>li>ul{
+				display: none;
+			}
+			#box>ul>li{
+				width: 80px;
+				text-align: center;
+				line-height: 30px;
+				background: green;
+				border-bottom: 1px solid #fff;
+				
+				
+			}
+			#box>ul>li a{
+				display: inline-block;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				color:white;
+			}
+			#box>ul>li:hover ul{
+				display: block;
+			}
+			#box>ul>li>ul>li{
+				width: 80px;
+				height: 30px
+				text-align: center;
+				line-height: 30px;
+				background: #f00;
+				border-bottom: 1px solid #fff;
+			}*/
+			body{
+				width:960px;
+				margin: 0 auto;
+			}
+			#box {
+				width:150px;
+				margin:auto;
+			}
+			#box li{
+				cursor: pointer;
+				width:150px;
+				height: 35px;
+				text-align: center;
+				/*加粗 字体大小、行高，英文字体，中文字体*/
+				font:bold 22px/35px arial,'幼圆';
+				background-color:darkcyan ;
+				color:white;
+				border-bottom: 1px solid white;
+				overflow:hidden;
+			}
+			#box>ul>li:hover {
+				height: auto;
+				
+				
+			}
+			#box>ul>li>ul{
+				border-top:1px solid white;
+				
+			}
+			#box>ul>li>ul>li{
+				background-color: red;
+			}
+			a{
+				text-decoration: none;
+				color: white;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<a href="#">Menu1</a>
+					<ul>
+						<li><a href="#">Menu1-1</a></li>
+						<li><a href="#">Menu1-2</a></li>
+						<li><a href="#">Menu1-3</a></li>
+					</ul>
+					
+				</li>
+				<li>
+					<a href="#">Menu2</a>
+					<ul>
+						<li><a href="#">Menu2-1</a></li>
+						<li><a href="#">Menu2-2</a></li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="#">Menu3</a>
+					<ul>
+						<li><a href="#">Menu3-1</a></li>
+						<li><a href="#">Menu3-2</a></li>
+						<li><a href="#">Menu3-3</a></li>
+					</ul>
+				</li>
+				<li >
+					<a href="#">Menu4</a>
+					<ul>
+						<li><a href="#">Menu4-1</a></li>
+						<li><a href="#">Menu4-2</a></li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="#">Menu5</a>
+					<ul>
+						<li><a href="#">Menu5-1</a></li>
+						<li><a href="#">Menu5-2</a></li>
+						<li><a href="#">Menu5-3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//即时调用函数-没有名字，写完马上调用
+//			+function(){
+//				var sum=0;
+//				for (var i=1;i<=100;i+=1){
+//					sum+=i;
+//				}
+//				document.write(<h1>+sum+'<h1>');
+//			}
+			function lastDigit(carNo){
+				var len = carNo.length;
+				for(var i = len-1;i>=0;i-=1){
+					var ch = carNo.charAt(i);
+					if(ch>='0'&&ch<='9'){
+						return parseInt(ch);
+					}
+				}
+				return '';
+			}
+			var carNo = window.prompt('请输入车牌号');
+			if (carNo && carNo!='null'){
+				var lastNumber = lastDigit(carNo);
+				
+				var date = new Date().getDay();
+				if (date>0&&date<6){
+					if(date==lastNumber||date==lastNumber+5
+					||date==lastNumber%5){
+						window.alert('今日限行!');
+					}else{
+						window.alert('今日不限行!');
+					}
+				}else{
+					window.alert('非工作日不限行!');
+				}
+			}
+		</script>
+	</body>
+</html>

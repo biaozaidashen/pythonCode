@@ -1,0 +1,65 @@
+@charset "utf-8";/*这里的作用：设置字符集是防止有汉字乱码*/
+/*
+@font-face {
+	font-family:'foo';
+	src: url(..font/Felt.ttf);
+} 设置特殊的字体*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#data {
+	width: 720px;
+	margin: 20px auto;
+	border-collapse: collapse;
+	/*合并边框*/
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+#data tr {
+	height: 50px;
+}
+
+td {
+	border: 1px solid black;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+}
+
+.av {
+	background-color: blue;
+}
+
+.shit {
+	background-color: bisque;
+}
+
+.bar {
+	background-color: lavenderblush;
+}
+
+.iv {
+	width: 400px;
+	border-left: none !important;
+}
+
+/*去掉表格上边框*/
+
+.row1 {
+	border-top: none !important;
+}
+
+
+/*去掉表格下边框*/
+
+.lrow {
+	border-bottom: none !important;
+}

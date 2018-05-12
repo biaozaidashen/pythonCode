@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#fruits li {
+				width: 180px;
+				height: 40px;
+				list-style: none;
+				background-color: darkolivegreen;
+				color: white;
+				text-align: center;
+				font: 22px/40px "微软雅黑";
+				border-bottom: 1px solid lightgray;
+			}
+			#fInput {
+				margin-left: 40px;
+			}
+			#fruits~input {
+				height: 30px;
+				font: 16px/30px "微软雅黑";
+			}
+			input[type=button] {
+				border: none;
+				background-color: red;
+				color: white;
+				
+			}
+			#fruits a{
+				position:relative;
+				left:30px;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background: url(img/ui-icons-red.png) no-repeat -95px -130px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>水果列表</h2>
+		<hr>
+		<ul id="fruits">
+			<li>苹果<a href="javascript:void(0);"></a></li>
+			<li>葡萄<a href="javascript:void(0);"></a></li>
+			<li>榴莲<a href="javascript:void(0);"></a></li>
+		</ul>
+		<input type="text" id="fInput">
+		<input type="button" value="添加" id="addBtn">
+		<script type="text/javascript" src="js/1.js"></script>
+		<script>
+//这种编程模式称为--委托回调--自己不调，专门给别人来调用,在这里的话，该函数是被浏览器调用了
+//这种函数是留给浏览器来调用的通常称之为事件回调函数
+//程序员知道事件发生的时候要做什么但不知道事件什么时候会触发
+//代表事件的evt参数是事件发生时浏览器回调函数时传入
+			function removeItem(evt){
+				var li=evt.target.parentNode;
+				$('fruits').removeChild(li);
+			}
+			var es=document.querySelectorAll('#fruits a');
+			
+			for(var i=0;i<es.length;i+=1){
+				es[i].addEventListener('click',removeItem);
+			}
+			$('addBtn').addEventListener('click', function() {
+				var fruitName = $('fInput').value.trim();
+				if (fruitName != '') {
+					var li = document.createElement('li');
+					li.textContent = fruitName;
+					var a=document.createElement('a');
+					a.href='javascript:void(0);';
+					a.addEventListener('click',removeItem);
+					li.appendChild(a);
+					$('fruits').appendChild(li);
+					$('fInput').value = '';
+					$('fInput').focus();
+				}
+			});
+		</script>
+	</body>
+</html>
+

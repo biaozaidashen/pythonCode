@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#fruits li {
+				width: 180px;
+				height: 40px;
+				list-style: none;
+				background-color: darkolivegreen;
+				color: white;
+				text-align: center;
+				font: 22px/40px "微软雅黑";
+				border-bottom: 1px solid lightgray;
+			}
+			#fInput {
+				margin-left: 40px;
+			}
+			#fruits~input {
+				height: 30px;
+				font: 16px/30px "微软雅黑";
+			}
+			input[type=button] {
+				border: none;
+				background-color: red;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>水果列表</h2>
+		<hr>
+		<ul id="fruits">
+			<li>苹果</li>
+			<li>葡萄</li>
+			<li>榴莲</li>
+		</ul>
+		<input type="text" id="fInput">
+		<input type="button" value="添加" id="addBtn">
+		<input type="button" value="删除" id="delBtn">
+		<script src="js/1.js"></script>
+		<script>
+			String.prototype.trim = 
+				String.prototype.trim || function() {
+					alert('你的浏览器太垃圾!');
+				};
+			
+			$('addBtn').addEventListener('click', function() {
+				var fruitName = $('fInput').value.trim();
+				if (fruitName != '') {
+					var li = document.createElement('li');
+					li.textContent = fruitName;
+					
+					$('fruits').appendChild(li);
+					$('fInput').value = '';
+					$('fInput').focus();
+				}
+			});
+			$('delBtn').addEventListener('click', function() {
+				var ul = $('fruits');
+				var allItems = document.querySelectorAll('#fruits>li');
+				if (allItems.length > 0) {
+					ul.removeChild(allItems[allItems.length - 1]);
+				}
+			});
+		</script>
+	</body>
+</html>
+

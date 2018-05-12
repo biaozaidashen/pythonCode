@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				width: 800px;
+				height: 402px;
+				margin: 0 auto;
+				border: 1px solid black;
+			}
+			#panel{
+				width: 802px;
+				margin: 10px auto;
+				text-align: center;
+			}
+			.piece{
+				width: 80px;
+				height: 80px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<div id="panel">
+			<button id="addBtn">添加</button>
+			<button id="flaBtn">闪烁</button>
+		</div>
+		<script src="js/1.js"></script>
+		<script>
+			function randomColor(){
+				var r=parseInt(Math.random()*256);
+				var g=parseInt(Math.random()*256);
+				var b=parseInt(Math.random()*256);
+				return 'rgb('+r+','+g+','+b+')';
+			}
+			
+			(function(){
+				var counter=0;
+				$('addBtn').addEventListener('click',function(){
+					
+					if(counter<50){
+						counter+=1;
+						var div=document.createElement('div');
+						div.className='piece';
+						div.style.backgroundColor=randomColor();
+						$('container').insertBefore(div,$('container').firstChild);
+					}
+				});
+				var timer=0;
+				$('flaBtn').addEventListener('click',function(){
+					if(!timer){
+	//setInterval定时器是每隔200毫秒就执行它的函数
+						timer=window.setInterval(function(){
+						var allPieces=$('container').children;
+						for(var i=0;i<allPieces.length;i+=1){
+							allPieces[i].style.backgroundColor=randomColor();
+						}
+						},200);
+					};
+				});
+			}());
+		</script>
+	</body>
+</html>

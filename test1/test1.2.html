@@ -1,0 +1,54 @@
+
+/*浮动*/
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#one,#two,#three{
+				/*设置浮动-脱离正常的文档流*/
+				width: 300px;
+				height: 300px;
+				/*float: right;*/
+				position: absolute;
+				z-index: 10;
+				
+			}
+			#one{
+				top: 50px;
+				left: 50px;
+				background-color: red;
+			}
+			#two{
+				top: 100px;
+				left: 100px;
+				background-color: green;
+				z-index: 20;
+			}
+			#three{
+				top: 150px;
+				left: 150px;
+				background-color: blue;
+			}
+			#four{
+				/*清除浮动-恢复正常的文档流*/
+				clear: both;
+				width: 200px;
+				height: 100px;
+				color:crimson;
+				border: 1px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one"></div>
+		<div id="two"></div>
+		<div id="three"></div>
+		<div id="four">Hello!!!</div>
+	</body>
+</html>

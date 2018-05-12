@@ -1,0 +1,49 @@
+<!-- 基于jQuery的Ajax -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="mm"></div>
+		<button id="loadBtn">加载</button>
+		<script src="js/jquery.min.js"></script>
+		<script>
+	//JavaScript发送HTTP请求获取数据默认只支持同源数据(同源策略)
+	//如果要跨域取数据是需要对方提供数据的服务器支持,服务器设置(JSONP/Cross-Origin:*)
+			$(function() {
+				$('#loadBtn').on('click', function() {
+//					var url = 'http://api.tianapi.com/meinv/?key=81a5d68102a2826cbc8220c325d1a440&num=10';
+			//obj是url的json对象
+//					$.getJSON(url, function(obj) {
+//						for (var i = 0; i < obj.newslist.length; i += 1) {
+//							$('#mm').append(
+//								$('<img>').attr('src', obj.newslist[i].picUrl)
+//									.attr('width', '300'));
+//						}
+//					});
+					// $.ajax(这种写法能拿各种格式的数据)
+					$.ajax({
+						'url':'http://api.tianapi.com/meinv/',
+						'type':'get',
+						'data':{
+							'key':'81a5d68102a2826cbc8220c325d1a440',
+							'num':10
+						},
+						'dataType':'json',
+						'success':function(obj){
+							for (var i = 0; i < obj.newslist.length; i += 1) {
+							$('#mm').append(
+								$('<img>').attr('src', obj.newslist[i].picUrl)
+									.attr('width', '300'));
+							}
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
+
+

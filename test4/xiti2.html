@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		请输入行数:<input type="number" id="inputNum" value="5"/>
+		<input type="button" value="打印小脸" onclick="printFace()"/>
+		<script type="text/javascript">
+			function printFace(){
+				var lineNum = document.getElementById("inputNum").value;
+				for(var i=lineNum; i>0; i-=1){
+					k = 2*i-1;
+					temp = ""
+					for(var j=0;j<k;j+=1){
+						temp += "\u263a";
+					}
+					document.write("<p style='margin: 10px auto;text-align: center;'>"+temp+"</p>")
+				}
+			}
+		</script>
+	</body>
+</html>

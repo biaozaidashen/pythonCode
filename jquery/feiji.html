@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				margin: 0 auto;
+				width: 960px;
+				height: 900px;
+				background-color: white;
+			}
+			
+			.btn {
+				width: 100px;
+				height: 100px;
+			}
+			#btn1{
+				position: absolute;
+				top: 600px;
+				left: 500px;
+			}
+			#btn2{
+				position: absolute;
+				top:400px;
+				left: 200px;
+			}
+			#btn3{
+				position: absolute;
+				top:500px;
+				left: 750px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="btn1" class="btn"><img src="img/hero2.png" /></div>
+		<div id="btn2" class="btn"><img src="img/hero2.png" /></div>
+		<div id="btn3" class="btn"><img src="img/hero2.png" /></div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var flag=true;
+				setInterval(myanimate, 200);
+				
+				function myanimate() {
+					$(".btn").animate({top: '-=5px'}, 200);
+					if(flag){
+						$('.btn img').attr('src','img/hero1.png');
+						flag=false;
+					}else{
+						$('.btn img').attr('src','img/hero2.png');
+						flag=true;
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="demo">点击生成随机名单</p>
+		<button onclick="foo()">点我</button>
+		<script>
+			function foo(){
+				var students = ["A", "B", "C", "D", "E"];
+				var after_stu = [];
+				for (var i = 0; i < 3; i += 1){
+					var index = parseInt(Math.random() * students.length);
+					after_stu.push(students[index]);
+					students.splice(index, 1);
+				}	
+				var x = document.getElementById("demo")
+				x.innerHTML = "生成的随机名称：" + after_stu;
+			}
+		</script>
+	</body>
+</html>

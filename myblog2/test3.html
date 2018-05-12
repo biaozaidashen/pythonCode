@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>熊彪首页</title>
+		<style type="text/css">
+			#page li{
+				width:180px;
+				height: 40px;
+				border: 1px solid blue;
+				list-style: none;
+				text-align: center;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<h1 id="header">list</h1>
+			<h2>Buy gjsajsd</h2>
+			<ul>
+				<li id="one" class="hot"><em>fresh</em>figs</li>
+				<li id="two" class="hot">pine nusds</li>
+				<li id="three" class="hot">hassa</li>
+				<li id="four">adsdw eew</li>
+			</ul>
+			<h2>shit</h2>
+		</div>
+		<script>
+			//查找元素的五种方法
+			//getElementById,getElementsByTagName,getElementsByClassName
+			//querySelector,querySelectorAll
+			//修改节点的内容和属性
+			//textContent,innerHtml,nodeValue
+			(function(){
+				//document.querySelector('#page>h2')只能取一个元素
+				var hs=document.querySelectorAll('#page>h2');
+				for(var i=0;i<hs.length;i+=1){
+					//hs[i].innerHtml='<em>I love you</em>';
+					hs[i].textContent='I love you';
+					//hs[i].firstChild.nodeValue='fuck';
+					//属性操作
+					//访问成员运算符--hs[i].id、setAttribute()、removeAttribute()
+	//hs[i].id='foo';hs[i].setAttribute('id','bar');修改属性
+	//alert(hs[i].getAttribute('id'));拿到属性
+	//hs[i].removeAttribute('id');删除属性
+				}
+				var ul=document.querySelector('#page>ul');
+				var li=document.createElement('li');//创建新节点
+				li.className='hot';
+				li.textContent='new item';
+		//追加新的子节点--appendChild()/insertBefore()
+		//删除子节点--removeChild()
+		
+				ul.appendChild(li);
+				var es=document.getElementsByClassName('hot');
+				for(var i=0;i<es.length;i+=1){
+					//该列表的背景色
+					es[i].style.backgroundColor='coral';
+				}
+	//如果已经获得一个节点 如何访问它的父节点，子节点，兄弟节点
+	//parentNode拿父节点
+	//children[下标],firstChild(第一个子节点),lastChild(最后一个子节点)
+	//nextSibling(拿下一个兄弟节点),prevSibling(拿上一个兄弟节点)
+			}());
+		</script>
+	</body>
+</html>

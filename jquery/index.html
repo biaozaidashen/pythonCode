@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#adv{
+				width: 960px;
+				margin: 0 auto;
+				display: none;
+				
+			}
+			p{
+				text-align: center;
+				background-color:yellow;
+				width: 200px;
+				margin-left: 100px;
+				color: white;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="adv">
+			<img src="img/20180420161945727.jpg" width="600px">
+		</div>
+		<div id="poem">
+			<p>床前明月光</p>
+			<p>床前明月光</p>
+			<p>床前明月光</p>
+			<p>床前明月光</p>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#adv').fadeIn(2000)
+				$('#adv').on('click',function(){
+					$('#adv').fadeOut(3000);
+				});
+				$('#poem p').on('click',function(evt){
+				//css的第一个参数是元素的属性，第二个参数是属性值
+					$('#poem p').css('background-color','green');
+					$(evt.target).css('background-color','red');
+				});
+			});
+		</script>
+	</body>
+</html>

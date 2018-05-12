@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#one,#two{
+				position: fixed;
+				width: 200px;
+				height: 200px;
+			}
+			#one{
+				background-color: red;
+				top:50px;
+				right: 50px;
+			}
+			#two{
+				background-color: blue;
+				top: 50px;
+				left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one"></div>
+		<div id="two"></div>
+		<script src="js/1.js"></script>
+		<script>
+//			function make(elem){
+//				var isMouseDown=false;//鼠标是否按下
+//				var originLeft=0;   //div左上角横坐标
+//				var originTop=0;  //div左上角纵坐标
+//				var mouseX=0;  //鼠标点击位置的横坐标
+//				var mouseY=0;   //鼠标点击位置的纵坐标
+//				bind(elem,'mousedown',function(evt){
+//					evt=evt||window.event;
+//					elem.isMouseDown=true;
+//					var divStyle=getStyle(elem);
+//					elem.originLeft=parseInt(divStyle.left);
+//					elem.originTop=parseInt(divStyle.top);
+//					elem.mouseX=evt.clientX;
+//					elem.mouseY=evt.clientY;
+//				});
+//				
+//				bind(elem,'mouseup',function(){
+//					isMouseDown=false;
+//				});
+//				bind(elem,'mouseout',function(){
+//					isMouseDown=false;
+//				});
+//				
+//				bind(elem,'mousemove',function(evt){
+	//这里少用{}来嵌套使代码更加扁平化
+//					if(!elem.isMouseDown) return;
+//						evt=evt||window.event;
+//						var dx=evt.clientX-elem.mouseX;
+//						var dy=evt.clientY-elem.mouseY;
+//						elem.style.left=(elem.originLeft+dx)+'px';
+//						elem.style.top=(elem.originTop+dy)+'px';
+//				});
+//			}
+			(function(){
+				make($('one'));
+				make($('two'));
+			}());
+		</script>
+	</body>
+</html>

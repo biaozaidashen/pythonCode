@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="num1" />
+		<select id="op">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">&times;</option>
+			<option value="/">&divide;</option>
+		</select>
+		<input type="text" id="num2" />
+		<button onclick="calculate()">=</button>
+		<input type="text" id="result" readonly />
+		<script>
+			function calculate(){
+		//取文本框内的内容用value属性
+				var x = document.getElementById("num1").value;
+				var y = document.getElementById("num2").value;
+				var operator = document.getElementById("op").value;
+				var result = eval(x + operator + y);
+				document.getElementById("result").value=result;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				width: 800px;
+				height: 402px;
+				margin: 0 auto;
+				border: 1px solid black;
+			}
+			#panel{
+				width: 802px;
+				margin: 10px auto;
+				text-align: center;
+			}
+			.piece{
+				width: 80px;
+				height: 80px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<div id="panel">
+			<button id="addBtn">添加</button>
+			<button id="flaBtn">闪烁</button>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function randomColor(){
+				var r=parseInt(Math.random()*256);
+				var g=parseInt(Math.random()*256);
+				var b=parseInt(Math.random()*256);
+				return 'rgb('+r+','+g+','+b+')';
+			}
+			$(function() {
+				var counter=0;
+				$('#addBtn').on('click', function() {
+					if(counter<50){
+						counter+=1;
+						$('#container').append($('<div>').attr
+						('class', 'piece').css('background-color', 
+						randomColor()));
+					}
+				});
+				$('#flaBtn').one('click', function() {
+			//这里的one意思是只执行一次就终止
+					window.setInterval(function() {
+						$('#container div').each(function() {
+							$(this).css('background-color',
+							randomColor());
+						});
+					}, 200);
+				});
+			});
+		</script>
+	</body>
+</html>

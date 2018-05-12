@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//JS创建对象的字面量语法-Json
+			/*var stu1={
+				name:'熊彪',
+				age:25,
+				study:function(courseName){
+					window.alert(this.name+'正在学习'+courseName+'.');
+				},
+				WatchAv:function(){
+					if (this.age>=18){
+						window.alert(this.name+'正在看黄片.');
+					}else{
+						window.alert(this.name+'看熊出没.');
+					}
+				}
+				
+			};
+			stu1.study('python')
+			stu1.WatchAv();*/
+			//在js中函数是一等公民。
+			function Student(name,age){
+				//创建对象的构造器方法
+				this.name=name;
+				this.age=age;
+			}
+			Student.prototype.study=function(courseName){
+					window.alert(this.name+'正在学习'+courseName+'.');
+			};
+			Student.prototype.watchAv()=function(){
+				if(this.age>=18){
+					window.alert(this.name+'正在看片.');
+				}else{
+					window.alert(this.name+'只能看熊出没.');
+				}
+			}
+			//创建对象时要用new
+			var stu1=new Student('赵信',25);
+			var stu2=new Student('熊彪',30);
+			stu1.study('python');
+			stu2.watchAv();
+		</script>
+	</body>
+</html>

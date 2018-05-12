@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>菜单</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			body{
+				height:800px ;
+				margin: 0 auto;
+				
+				background-image: url(img/dark-wood.jpg);
+				font-family: arial;
+				line-height: 1.4em;
+			}
+			.wrapper{
+				width: 960px;
+				
+				background-color: #FFFFFF;
+				margin: 20px auto;
+				border: 1px solid #000000;
+			}
+			.header{
+				height: 160px;
+				background-image:url(img/header.jpg) ;
+			}
+			.header h1{
+				width: 960px;
+				height: 130px;
+				line-height: 130px;
+				margin: 0;
+				
+			}
+			.nav,.footer{
+				width: 960px;
+				margin: 0 auto;
+				height: 30px;
+				background-color: #AEACA8;
+			}
+			.nav ul{
+				margin-left: 30px ;
+			}
+			.nav li{
+				text-align: center;
+				width: 80px;
+				display: inline-block;
+				height:1.4em
+				list-style: none;/*去掉圆点*/
+				margin: 5px 50px 5px 0;
+			}
+			.nav a{
+				text-decoration: none;
+				color:white;
+			}
+			a:hover{
+				color:black;
+			}
+			.nav a.current{
+				color:black;
+			}
+			.main{
+				overflow: auto;
+			}
+			.section{
+				width: 659px;
+				
+				border-right: 1px solid #eeeeee;
+				float: left;
+			}
+			.article {
+				/*clear: both;*/
+				overflow: auto;
+				width: 619px;
+				margin: 20px;
+				
+			}
+			hgroup {
+				margin-top: 20px;
+				
+			}
+			figure {
+				float: left;
+				width: 290px;
+				
+				padding: 5px;
+				margin: 0 20px 0 0;
+				border: 1px solid #eeeeee;
+			}
+			figcaption {
+				font-size: 90%;
+				text-align: left;
+			}
+			hgroup h2{
+				margin: 10px 0 5px 0;
+				padding: 0;
+			}
+			hgroup h3{
+				color: red;
+				margin-bottom:25px ;
+			}
+			.aside{
+				width: 300px;
+				margin: 0;
+				float: left;
+			}
+			.bar h2{
+				margin:40px 0 25px 20px;
+				color: red;
+			}
+			.bar a{
+				display: block;
+				color: red;
+				margin:0 0 0 30px ;
+				text-align: left;
+				padding: 10px 0;
+				text-decoration: none;
+				border-bottom: 1px solid black;
+			}
+			.bar a:hover{
+				background-color:greenyellow ;
+				color: black;
+			}
+			.bar p{
+				margin-left: 20px;
+			}
+			.footer{
+				color: white;
+				
+			}
+			#end{
+				margin-left: 30px;
+				padding:7px 0 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<h1><img src="img/header.jpg" alt="" /></h1>
+				<div class="nav">
+					<ul>
+						<li><a href="" class="current">home</a></li>
+						<li><a href="">classes</a></li>
+						<li><a href="">catering</a></li>
+						<li><a href="">about</a></li>
+						<li><a href="">contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main">
+				<div class="section">
+					<div class="article">
+						<figure>
+							<img src="img/bok-choi.jpg" alt="Bok Choi" />
+							<figcaption>Bok Choi</figcaption>
+						</figure>
+						<hgroup>
+							<h2>Japanese Vegetarian</h2>
+							<h3>Five week course in London</h3>
+						</hgroup>
+						<div class="word">A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle dishes.</div>
+					</div>    
+					<div class="article">
+						<figure>
+							<img src="img/teriyaki.jpg" alt="Teriyaki sauce" />
+							<figcaption>Teriyaki Sauce</figcaption>
+						</figure>
+						<hgroup>
+							<h2>Sauces Masterclass</h2>
+							<h3>One day workshop</h3>
+						</hgroup>
+						<div class="word">An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery.</div>
+					</div>    
+				</div>
+				<div class="aside">
+					<div class="bar">
+						<h2>Popular Recipes</h2>
+						<a href="">Yakitori (grilled chicken)</a>
+						<a href="">Tsukune (minced chicken patties)</a>
+						<a href="">Okonomiyaki (savory pancakes)</a>
+						<a href="">Mizutaki (chicken stew)</a>
+					</div>
+					<div class="bar">
+						<h2>Contact</h2>
+						<p>Yoko's Kitchen<br />
+							27 Redchurch Street<br />
+							Shoreditch<br />
+							London E2 7DP</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div id="end">&copy; 2011 Yoko's Kitchen</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<h3><strong id="sec">5</strong>秒钟以后自动跳转到百度</h3>
+		<script src="js/1.js"></script>
+		<script>
+			(function(){
+				var counter=5;
+				window.setTimeout(function(){
+					counter-=1;
+					if(counter==0){
+						location.href='http://www.baidu.com';
+					}else{
+						$('sec').textContent = counter;
+				//arguments.callee代表function()函数，这里是递归调用
+						window.setTimeout(arguments.callee,1000)
+					}
+				},1000);	
+			}());
+		</script>
+	</body>
+</html>

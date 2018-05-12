@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<lable for="num">请输入你猜的数字：</lable>
+		<input type="text" size="2" id="num">
+		<input type="button" onclick="judge()" value="确定">
+		<p id="hint"></p>
+		<script type="text/javascript">
+			/*js中有6类数据类型：number,string,boolean,
+			 null,undefined,object.可以通过typeof查看变量的数据类型。
+			 //双斜线是单行注释的作用*/
+			/*parseInt是得到整数的意思，parseFloat得到浮点数*/
+			/*当把字符串与数值相比较时，比如字符串'123'会自动转换成数值，(注意switch
+			 语句里不做转换，比如5=='5'返回False。如果不想
+			 类型转换用===或者!==这些符号表示，如果0<a<10在js里要表示成（a>0&&a<10)
+			 */
+			/*把其他数据类型转变为布尔型用两个!!*/
+			//生成随机数的通用公式：[min,max]:Math.ramdom()*(max-min+1)+min
+			//[min,max):Math.random()*(max-min)+min
+			var answer=parseInt(Math.random()*100+1)/*Math.random()是生成[0,1)区间的数*/
+			var counter=0;
+			function judge(){
+				counter+=1;
+				var hint='';
+				var txt=document.getElementById('num')
+			 	var num=parseInt(txt.value);
+			 	if(isNaN(num)){
+			 		window.alert('请输入1-100间的整数');
+			 	}else{
+				 	if(num<answer){
+				 		hint='大一点';
+				 	}else if(num>answer){
+				 		hint='小一点';
+				 	}else{
+				 		hint='恭喜你猜对了! 你猜了'+counter+'次';
+				 	}
+				 	var p=document.getElementById('hint');
+				 	p.innerHTML+='你猜的数字是'+num+','+hint+'<br>';
+				 	txt.value='';
+				 	txt.blur();/*获得光标用focus(),失去光标用blur()*/
+			 	}
+			}
+		</script>
+	</body>
+</html>

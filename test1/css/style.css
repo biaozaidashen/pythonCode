@@ -1,0 +1,61 @@
+@font-face{
+	font-family:chunkfive ;
+	src:url(../fonts/chunkfive.ttf),
+		url(../fonts/chunkfive.eot);
+}
+*{
+	margin:0;
+	padding:0;
+	border:1px dashed blue;
+}
+h1{
+	height:100px;
+	font:italic small-caps 36px/100px chunkfive;
+	color:red;
+	margin:20px 10px;
+	padding: 100px 0;
+}
+ul{
+	margin-left:50px ;
+}
+.menu li{
+	list-style-image:url(../img/star.png);
+	background: white url(../img/email.png) 20px 20px no-repeat;
+	/*background-image: url(../img/email.png);
+	background-color:pink ;
+	background-repeat:no-repeat no-repeat;
+	background-position:20px 20px ;*/
+	width: 120px;
+	height: 40px;
+	/*list-style-position: inside;图片放在列表里面*/
+}
+/*+表示毗邻的兄弟
+p+a{
+	color:darkblue;
+}*/
+ 
+/*~表示兄弟关系
+h1~p{
+	color:darkblue;
+}*/
+/*大于号表示直接父子*/
+p>a{
+	text-decoration: none;
+}
+/*空格表示后代
+p a{
+	text-decoration: none;
+}*/
+/*逗号表示并列*/
+/*超链接的伪类*/
+a:link,a:visited{
+	color:darkgreen;
+}
+
+a:active{
+	color:darkorange;
+}
+.photo{
+	border-radius:10px ;
+	
+}

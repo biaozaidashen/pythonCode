@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="ok">ok</button>
+		<script src="js/mylib.js"></script>
+		<script>
+			(function(){
+				function foo(){
+					window.alert('hello');
+				}
+				
+				bind($('ok'), 'click', foo);
+				bind($('ok'), 'click', function(evt) {
+					evt = evt||window.event;/*解决IE浏览器兼容问题*/
+					/*confirm是弹出窗口里的确定按钮*/
+					if (window.confirm('Are you sure?')) {
+						unbind(evt.target||evt.srcElement, 'click', foo);
+					}
+				});
+
+			}());
+		</script>
+	</body>
+</html>

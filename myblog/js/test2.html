@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>hello,world</h1>
+		<hr />
+		<p id="time"></p>
+		<button onclick="showTime()">显示时间</button>
+		
+		<script>
+			function showTime(){
+				var date = new Date();
+				//document.write(date)在新窗口显示时间
+				var p=document.getElementById('time');
+				p.textContent='当前时间:'+date;
+			}//在当前窗口显示时间可以用一个p标签来解决
+			
+		</script>
+		
+		<h2>大家好!</h2>
+	</body>
+</html>

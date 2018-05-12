@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="foo">Hello,world!</h1>
+		<script src="js/1.js"></script>
+		<script>
+	//处理浏览器兼容问题
+			function getStyle(elem){
+				return window.getComputedStyle?window.getComputedStyle
+				(elem):window.currentStyle;
+			}
+			(function(){
+//要修改样式直接通过元素的style属性就可以做到
+//要读取样式的话需要通过window对象的getComputedStyle()
+//style属性--只写不读
+//getComputedStyle()--只读不写
+//全局函数--isNaN()-parseInt()-parseFloat()-isFinite()-
+				var h1Style=window.getComputedStyle($('foo'));
+				alert(h1Style.fontSize)
+				var newSize=parseInt(h1Style.fontSize)*3;
+				$('foo').style.fontSize=newSize+'px';
+			}());
+		</script>
+	</body>
+</html>

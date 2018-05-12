@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.foo tr td{
+				width: 100px;
+				text-align: center;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			mulTable();
+			function mulTable() {
+				document.write('<table class="foo">');
+				for (var row = 1; row < 10; row += 1) {
+					document.write('<tr>');
+					for (var col = 1; col <= row; col += 1) {
+						document.write('<td>');
+						document.write(row + '&times;' + col + '=' + row * col);
+						document.write('</td>');
+					}
+					document.write('</tr>');
+				}
+				document.write('</table>');
+			}
+		</script>

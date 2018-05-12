@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#fruits li {
+				width: 180px;
+				height: 40px;
+				list-style: none;
+				background-color: darkolivegreen;
+				color: white;
+				text-align: center;
+				font: 22px/40px "微软雅黑";
+				border-bottom: 1px solid lightgray;
+			}
+			#fInput {
+				margin-left: 40px;
+			}
+			#fruits~input {
+				height: 30px;
+				font: 16px/30px "微软雅黑";
+			}
+			input[type=button] {
+				border: none;
+				background-color: red;
+				color: white;
+				
+			}
+			#fruits a{
+				position:relative;
+				left:30px;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background: url(img/ui-icons-red.png) 
+				no-repeat -95px -130px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>水果列表</h2>
+		<hr>
+		<ul id="fruits">
+			<li>苹果<a href="javascript:void(0);"></a></li>
+			<li>葡萄<a href="javascript:void(0);"></a></li>
+			<li>榴莲<a href="javascript:void(0);"></a></li>
+		</ul>
+		<input type="text" id="fInput">
+		<input type="button" value="添加" id="addBtn">
+		<script src="js/jquery.min.js"></script>
+		<script>
+//当调用js库冲突时写jQuery.noConflict()让出$函数，然后用jQuery代替
+	//jQuery的$函数的作用：
+	//1.$(function(){})--$函数中传入参数是一个函数
+	//作用：绑定页面加载完成之后要执行的回调函数
+	//2.$(selector)--$函数中传入的函数是一个选择器
+	//作用：通过选择器获得对应的元素并将其处理成jQuery对象
+//jQuery对象本质是一个数组，如果要将jQuery对象还原成
+//原生的JS对象-下标运算[index]/get(index)
+//3.$(elem)--$函数中传入的参数是原生JS对象
+//作用：将原生JS对象转成jQuery对象
+//4.$(标签)--$函数中传入的参数是一个标签
+//作用：创建和标签对应的元素(得到的是jQuery对象)
+
+
+//evt参数代表的是事件对象--绑定了事件相关的所有信息
+//如果事件回调函数中要用到和事件相关的属性和方法就最好指定evt参数
+//target/clientX/button/keyCode
+//preventDefault()/stopPropagation()
+//不管函数是否指定了evt参数当事件发生回调该函数时都会传入该函数
+			$(function(){
+				function removeItem(evt){
+					$(this).parent().remove();
+				}
+				$('#fruits a').on('click',removeItem);
+				$('#addBtn').on('click',function(){
+					//val()指的是返回或设置被选元素的值
+					var fruitName=$('#fInput').val().trim();
+					if(fruitName!=''){
+						var a=$('<a>').attr('href',
+						'javascript:void(0);');
+						a.on('click',removeItem);//让新添加的也能被删除
+						var li=$('<li>').text(fruitName).append(a);
+						$('#fruits').append(li);
+						$('#fInput').val('')[0].focus();
+					}
+				});
+			});
+		</script>
+		
+	</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<form id="myform"action="" method="post">
+			<div><input type="checkbox">hsdggs</div>
+			<div><input type="checkbox" checked>ssdss</div>
+			<div><input type="checkbox">sddsd</div>
+			<div><input type="checkbox" checked>addsd</div>
+			<div><input type="checkbox">sjsdkdk</div>
+			<!--javascript:void(0)是取消超链接的默认刷新行为-->
+			<a href="javascript:void(0)" id="allBtn">全选</a>
+			<a href="javascript:void(0)" id="canBtn">取消</a>
+			<a href="javascript:void(0)" id="revBtn">反选</a>
+			
+		</form>
+		<script src="js/1.js"></script>
+		<script>
+			(function(){
+				var contents=document.querySelectorAll('#myform input[type=checkbox]');
+				$('allBtn').addEventListener('click',function(){
+					for(var i=0;i<contents.length;i+=1){
+						contents[i].checked=true;
+					}
+				});
+				$('canBtn').addEventListener('click',function(){
+					for(var i=0;i<contents.length;i+=1){
+						contents[i].checked=false;
+					}
+				});
+				$('revBtn').addEventListener('click',function(){
+					for(var i=0;i<contents.length;i+=1){
+						contents[i].checked=!contents[i].checked;
+					}
+				});
+			}());
+		</script>
+	</body>
+</html>

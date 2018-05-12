@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#message {
+				text-align: right;
+				margin: 10px 50px 0 0 ;
+				font-size: 2em;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="message"></div>
+		<script type="text/javascript">
+			var h = new Date().getHours();
+			var message = "";
+			if (0 <= h && h < 5) {
+				message = "你好";
+			}else if (h < 10 ){
+				message = "早上好";
+			}else if (h < 13){
+				message = "上午好";
+			}else if (h < 15){
+				message = "中午好";
+			}else if (h < 19){
+				message = "下午好";
+			}else {
+				message = "晚上好";
+			}
+			document.getElementById("message").innerHTML = 
+				"<a href='http://www.qq.com'>" + message + "</a>";
+		</script>
+	</body>
+</html>

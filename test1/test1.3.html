@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				font-family:verdana ,'宋体';
+			}
+			body{
+				width: 960px;
+				margin: 10px auto;
+			}
+			#header,#main,#footer{
+				background-color: lightgray;
+				margin: 20px 0;
+				clear: both;
+			}
+			#header h1{
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+			}
+			#nav{
+				height: 40px;
+				text-align: center;
+			}
+			#nav ul{
+				margin-top: 10px;
+			}
+			#nav ul li{
+				line-height: 35px;
+				width: 100px;
+				margin: 0 10px;
+				display: inline;
+			}
+			a{
+			text-decoration: none;	
+			}
+			a:link,a:visited,a:active{
+				color:black;
+			}/*这里是伪类*/
+			#nav ul li:hover{
+				border-bottom: 4px solid red;
+			}
+			.feature{
+				height: 250px;
+				text-align:center;
+				background-color: aquamarine;
+			}
+			.one,.two,.three{
+				width: 300px;
+				height: 150px;
+				float: left;
+			}
+			.one{
+				margin:10px 15px 0 0;
+				background-color: salmon;
+			}
+			.two{
+				margin:10px 15px ;
+				background-color: aqua;
+			}
+			.three{
+				margin: 10px 0 0 15px;
+				background-color: burlywood;
+			}
+			#footer{
+				text-align: center;
+				line-height: 45px;
+				height: 45px;
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="header">
+			<h1>Logo</h1>
+			<div id="nav">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Products</a></li>
+					<li><a href="">Services</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="main">
+			<div class="feature">Feature</div>
+			<div class="one">Column One</div>
+			<div class="two">Column Two</div>
+			<div class="three">Column Three</div>
+			
+		</div>
+		<div id="footer">
+			&copy;Copyright 2011
+		</div>
+	</body>
+</html>
